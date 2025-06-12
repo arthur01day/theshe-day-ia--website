@@ -1,0 +1,446 @@
+/* Estilos adicionais para as seções de Geopolítica e Cidades Futurísticas */
+
+/* Seção de Geopolítica */
+.geopolitics-content {
+    margin-top: 1.5rem;
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4B5563;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    font-style: italic;
+}
+
+.geopolitics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.geopolitics-card {
+    background-color: var(--white-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid #3730a3;
+}
+
+.geopolitics-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.geopolitics-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #3730a3;
+    line-height: 1.4;
+}
+
+.geo-meta {
+    font-size: 0.9rem;
+    color: var(--gray-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.geo-meta::before {
+    content: '\f0ac';
+    font-family: 'Font Awesome 6 Free';
+    margin-right: 0.5rem;
+    font-weight: 900;
+}
+
+.geo-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 80px;
+    text-align: center;
+}
+
+.highlight-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3730a3;
+    margin-bottom: 0.3rem;
+}
+
+.highlight-text {
+    font-size: 0.8rem;
+    color: var(--gray-color);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Seção de Cidades Futurísticas */
+.future-cities-content {
+    margin-top: 1.5rem;
+}
+
+.highlight-banner {
+    background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="rgba(255,255,255,0.05)" d="M0 0L100 100ZM100 0L0 100Z"/></svg>');
+    background-size: 20px 20px;
+    opacity: 0.3;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.highlight-banner h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.city-project-card {
+    background-color: var(--white-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.city-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.project-header h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.project-country {
+    background-color: #e0e7ff;
+    color: #3730a3;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-description {
+    margin-bottom: 1.5rem;
+    color: #4B5563;
+}
+
+.project-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--gray-color);
+}
+
+.ai-applications {
+    margin-top: 1rem;
+}
+
+.ai-applications h4 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: #4B5563;
+}
+
+.ai-applications ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ai-applications li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #4B5563;
+}
+
+.ai-applications li::before {
+    content: '\f0eb';
+    font-family: 'Font Awesome 6 Free';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+.comparison-section {
+    background-color: var(--white-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+.comparison-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chart-bar {
+    height: 40px;
+    background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: width 1s ease-in-out;
+}
+
+.chart-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.bar-label {
+    font-weight: 500;
+    z-index: 1;
+}
+
+.bar-value {
+    margin-left: auto;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.analysis-box {
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.analysis-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.analysis-box p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #4B5563;
+}
+
+.about-content {
+    background-color: var(--white-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+}
+
+/* Animações para Geopolítica */
+.geopolitics-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.world-map {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background-image: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.2) 1px,
+        transparent 1px
+    );
+    background-size: 20px 20px;
+    opacity: 0.3;
+}
+
+.country {
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes country-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+.energy-connection {
+    position: absolute;
+    height: 2px;
+    transform-origin: left center;
+}
+
+@keyframes connection-flow {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+}
+
+.ai-innovation-center {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes innovation-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); }
+    50% { transform: scale(1.5); opacity: 1; box-shadow: 0 0 25px rgba(255, 255, 255, 0.8); }
+}
+
+/* Responsividade para novas seções */
+@media (max-width: 768px) {
+    .geopolitics-grid,
+    .cities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-stats {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        flex: 1 0 30%;
+    }
+    
+    .highlight-banner h3 {
+        font-size: 1.5rem;
+    }
+    
+    .chart-bar {
+        height: 35px;
+        padding: 0 0.5rem;
+    }
+    
+    .bar-label, .bar-value {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .highlight-item {
+        min-width: 60px;
+    }
+    
+    .highlight-number {
+        font-size: 1.2rem;
+    }
+    
+    .highlight-text {
+        font-size: 0.7rem;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .stat-item {
+        flex: 1 0 100%;
+    }
+    
+    .analysis-box {
+        padding: 1.5rem;
+    }
+}

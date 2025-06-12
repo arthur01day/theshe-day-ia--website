@@ -1,0 +1,280 @@
+/* Sistema de cores renovado com degradês relacionados aos textos */
+
+:root {
+  /* Cores base */
+  --primary-color: #4f46e5;
+  --secondary-color: #00c2a8;
+  --accent-color: #f43f5e;
+  --dark-bg: #0f172a;
+  --light-bg: #1e293b;
+  --text-light: #e2e8f0;
+  --text-muted: #94a3b8;
+  
+  /* Gradientes temáticos */
+  --header-gradient: linear-gradient(135deg, #4f46e5 0%, #00c2a8 100%);
+  --news-gradient: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
+  --tech-gradient: linear-gradient(135deg, #00c2a8 0%, #34d399 100%);
+  --critique-gradient: linear-gradient(135deg, #f43f5e 0%, #fb7185 100%);
+  --geopolitics-gradient: linear-gradient(135deg, #eab308 0%, #fbbf24 100%);
+  --game-gradient: linear-gradient(135deg, #6366f1 0%, #00c2a8 100%);
+  --palantir-gradient: linear-gradient(135deg, #0ea5e9 0%, #22d3ee 100%);
+  
+  /* Gradientes para fundos */
+  --bg-gradient-main: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --bg-gradient-card: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  --bg-gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e1e38 100%);
+  
+  /* Fontes */
+  --heading-font: 'Georgia', serif;
+  --body-font: 'Georgia', serif;
+}
+
+/* Estilos gerais renovados */
+body {
+  font-family: var(--body-font);
+  background: var(--bg-gradient-main);
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+}
+
+/* Cabeçalhos com degradês relacionados ao conteúdo */
+h1 {
+  background: var(--header-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 60px;
+  margin-top: 8px;
+  background: var(--header-gradient);
+  border-radius: 2px;
+}
+
+/* Seção de notícias */
+#noticias h2::after {
+  background: var(--news-gradient);
+}
+
+#noticias .card {
+  border-left: 4px solid transparent;
+  border-image: var(--news-gradient);
+  border-image-slice: 1;
+}
+
+/* Seção de tecnologia */
+#tecnologia h2::after {
+  background: var(--tech-gradient);
+}
+
+#tecnologia .card {
+  border-left: 4px solid transparent;
+  border-image: var(--tech-gradient);
+  border-image-slice: 1;
+}
+
+/* Seção de críticas */
+#criticas h2::after {
+  background: var(--critique-gradient);
+}
+
+#criticas .card {
+  border-left: 4px solid transparent;
+  border-image: var(--critique-gradient);
+  border-image-slice: 1;
+}
+
+/* Seção de geopolítica */
+#geopolitica h2::after {
+  background: var(--geopolitics-gradient);
+}
+
+#geopolitica .card {
+  border-left: 4px solid transparent;
+  border-image: var(--geopolitics-gradient);
+  border-image-slice: 1;
+}
+
+/* Seção do jogo */
+#robodog-run h2::after {
+  background: var(--game-gradient);
+}
+
+/* Seção Palantir */
+#palantir h2::after {
+  background: var(--palantir-gradient);
+}
+
+#palantir .card {
+  border-left: 4px solid transparent;
+  border-image: var(--palantir-gradient);
+  border-image-slice: 1;
+}
+
+/* Cards com efeito de degradê ao passar o mouse */
+.card {
+  background: var(--bg-gradient-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(0, 194, 168, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Botões com degradês */
+.btn {
+  background: var(--header-gradient);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  transition: all 0.6s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Links com efeito de degradê */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--header-gradient);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Citações com fundo em degradê */
+blockquote {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(0, 194, 168, 0.1) 100%);
+  border-left: 4px solid var(--secondary-color);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+
+/* Destaques com degradê */
+.highlight {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(0, 194, 168, 0.1) 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Efeito de texto com degradê para títulos importantes */
+.gradient-text {
+  background: var(--header-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+/* Efeito de borda com degradê */
+.gradient-border {
+  position: relative;
+  border-radius: 12px;
+  padding: 1px;
+  background: var(--header-gradient);
+}
+
+.gradient-border-content {
+  background: var(--bg-gradient-card);
+  border-radius: 11px;
+  padding: 1.5rem;
+}
+
+/* Efeito de fundo com padrão de grade sutil */
+.grid-pattern {
+  position: relative;
+}
+
+.grid-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><rect fill="none" width="20" height="20"/><path fill="rgba(255,255,255,0.03)" d="M0 0L20 20ZM20 0L0 20Z"/></svg>');
+  background-size: 20px 20px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Responsividade para diferentes tamanhos de tela */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+}

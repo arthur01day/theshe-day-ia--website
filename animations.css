@@ -1,0 +1,200 @@
+/* Animação de Cidade Futurística */
+.city-animation-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.city-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+}
+
+/* Edifícios */
+.building {
+    position: absolute;
+    bottom: 0;
+    background: rgba(30, 41, 59, 0.8);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    transform-origin: bottom;
+}
+
+.building::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 10px,
+        rgba(56, 189, 248, 0.2) 10px,
+        rgba(56, 189, 248, 0.2) 12px
+    );
+}
+
+/* Luzes dos edifícios */
+.building-lights {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.8) 1px,
+        transparent 1px
+    );
+    background-size: 10px 10px;
+    opacity: 0;
+    animation: flicker 15s infinite;
+}
+
+/* Veículos voadores */
+.flying-vehicle {
+    position: absolute;
+    width: 20px;
+    height: 8px;
+    background: rgba(239, 68, 68, 0.8);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+}
+
+.flying-vehicle::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -5px;
+    width: 30px;
+    height: 12px;
+    background: rgba(239, 68, 68, 0.3);
+    border-radius: 50%;
+    filter: blur(4px);
+}
+
+/* Hologramas */
+.hologram {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background: rgba(56, 189, 248, 0.2);
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    opacity: 0.7;
+    animation: hologram-flicker 15s infinite;
+}
+
+/* Céu com estrelas */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.8) 1px,
+        transparent 1px
+    );
+    background-size: 100px 100px;
+}
+
+/* Lua */
+.moon {
+    position: absolute;
+    top: 40px;
+    right: 80px;
+    width: 60px;
+    height: 60px;
+    background: rgba(226, 232, 240, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(226, 232, 240, 0.8);
+}
+
+/* Nuvens baixas */
+.clouds {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 200%;
+    height: 40px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(148, 163, 184, 0.1) 40%,
+        rgba(148, 163, 184, 0.2) 60%,
+        transparent
+    );
+    animation: clouds-move 15s linear infinite;
+}
+
+/* Luzes da cidade */
+.city-lights {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(
+        to top,
+        rgba(56, 189, 248, 0.4),
+        transparent
+    );
+    animation: city-glow 15s infinite;
+}
+
+/* Animações */
+@keyframes building-rise {
+    0% { transform: scaleY(0); }
+    100% { transform: scaleY(1); }
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 0.1; }
+    25% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+    75% { opacity: 0.2; }
+}
+
+@keyframes hologram-flicker {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    25% { opacity: 0.7; transform: scaleY(1.05); }
+    50% { opacity: 0.5; transform: scaleY(0.95); }
+    75% { opacity: 0.6; transform: scaleY(1.02); }
+}
+
+@keyframes vehicle-move {
+    0% { transform: translateX(-50px); }
+    100% { transform: translateX(calc(100% + 50px)); }
+}
+
+@keyframes clouds-move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes city-glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* Animação de reinício */
+@keyframes restart-animation {
+    0%, 100% { opacity: 1; }
+    95%, 96% { opacity: 0; }
+}
+
+/* Classe para reiniciar a animação */
+.restart-animation {
+    animation: restart-animation 15s linear infinite;
+}

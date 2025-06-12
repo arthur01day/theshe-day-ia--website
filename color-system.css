@@ -1,0 +1,540 @@
+/* Sistema de cores renovado com degradês vivos e tipografia atualizada */
+
+:root {
+    /* Paleta de cores principal */
+    --primary-gradient: linear-gradient(135deg, #3730a3 0%, #4f46e5 100%);
+    --secondary-gradient: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    --danger-gradient: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    
+    /* Cores de fundo com degradês sutis */
+    --bg-gradient-light: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    --bg-gradient-dark: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    --bg-gradient-card: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    
+    /* Cores de texto */
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-light: #94a3b8;
+    --text-on-dark: #f8fafc;
+    
+    /* Cores de borda */
+    --border-light: #e2e8f0;
+    --border-medium: #cbd5e1;
+    --border-dark: #64748b;
+    
+    /* Cores para seções específicas */
+    --news-gradient: linear-gradient(135deg, #3730a3 0%, #4338ca 100%);
+    --theory-gradient: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    --geopolitics-gradient: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
+    --cities-gradient: linear-gradient(135deg, #15803d 0%, #166534 100%);
+    --game-gradient: linear-gradient(135deg, #c026d3 0%, #a21caf 100%);
+}
+
+/* Tipografia atualizada */
+body {
+    font-family: Georgia, serif;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background: var(--bg-gradient-light);
+}
+
+h1, h2, h3, h4, h5, h6, nav, .btn, .category-tag, .update-date, .news-meta, .theory-author, .geo-meta {
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Cabeçalho com degradê mais vivo */
+header {
+    background: var(--bg-gradient-dark);
+    color: var(--text-on-dark);
+    padding: 2.5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="rgba(255,255,255,0.05)" d="M0 0L100 100ZM100 0L0 100Z"/></svg>');
+    background-size: 20px 20px;
+    opacity: 0.3;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #f8fafc, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+header .tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 700px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Navegação com efeito de hover melhorado */
+nav {
+    background: var(--primary-gradient);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto;
+}
+
+nav li {
+    flex: 0 0 auto;
+}
+
+nav a {
+    display: block;
+    padding: 1rem 1.2rem;
+    color: var(--text-on-dark);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    white-space: nowrap;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--accent-gradient);
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+/* Seções com cabeçalhos estilizados */
+section {
+    margin: 3rem 0;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary-gradient);
+    border-radius: 3px;
+}
+
+/* Seção de destaque com degradê mais vivo */
+#destaque h2::after {
+    background: var(--primary-gradient);
+}
+
+.featured-card {
+    background: var(--bg-gradient-card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid transparent;
+    border-image: var(--primary-gradient);
+    border-image-slice: 1;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.featured-content {
+    padding: 2rem;
+}
+
+.featured-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+/* Seção de notícias com cards melhorados */
+#noticias h2::after {
+    background: var(--news-gradient);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.news-card {
+    background: var(--bg-gradient-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--news-gradient);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.news-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.news-meta {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.news-meta::before {
+    content: '\f073';
+    font-family: 'Font Awesome 6 Free';
+    margin-right: 0.5rem;
+    font-weight: 900;
+}
+
+.news-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: var(--bg-gradient-light);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid var(--border-light);
+    text-decoration: none;
+}
+
+.category-tag:hover, .category-tag.active {
+    background: var(--primary-gradient);
+    color: white;
+    border-color: transparent;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #3730a3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.read-more::after {
+    content: '\f061';
+    font-family: 'Font Awesome 6 Free';
+    margin-left: 0.5rem;
+    font-weight: 900;
+    transition: transform 0.3s;
+}
+
+.read-more:hover {
+    color: #4f46e5;
+}
+
+.read-more:hover::after {
+    transform: translateX(3px);
+}
+
+/* Seção de categorias */
+#categorias h2::after {
+    background: var(--secondary-gradient);
+}
+
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    justify-content: center;
+}
+
+.categories-container .category-tag {
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+}
+
+/* Seção de teorias com cards estilizados */
+#teorias h2::after {
+    background: var(--theory-gradient);
+}
+
+.theories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.theory-card {
+    background: var(--bg-gradient-card);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.theory-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--theory-gradient);
+}
+
+.theory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.theory-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.theory-author {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.theory-content {
+    margin: 1.5rem 0;
+    color: var(--text-secondary);
+}
+
+.theory-references {
+    background: var(--bg-gradient-light);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.theory-references h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.theory-references ul {
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.theory-references li {
+    margin-bottom: 0.3rem;
+}
+
+.theory-references a {
+    color: #3730a3;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.theory-references a:hover {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+
+/* Seção de geopolítica com cards estilizados */
+#geopolitica h2::after {
+    background: var(--geopolitics-gradient);
+}
+
+.geopolitics-card {
+    border-top: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.geopolitics-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--geopolitics-gradient);
+}
+
+.geopolitics-card h3 {
+    color: #0c4a6e;
+}
+
+/* Seção de cidades futurísticas */
+#cidades h2::after {
+    background: var(--cities-gradient);
+}
+
+.city-project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.city-project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--cities-gradient);
+}
+
+.project-header h3 {
+    color: #166534;
+}
+
+/* Seção de jogo */
+#ia-quiz h2::after {
+    background: var(--game-gradient);
+}
+
+.game-container {
+    background: var(--bg-gradient-light);
+}
+
+/* Rodapé com degradê */
+footer {
+    background: var(--bg-gradient-dark);
+    color: var(--text-on-dark);
+    padding: 2rem 0;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path fill="rgba(255,255,255,0.03)" d="M0 0L100 100ZM100 0L0 100Z"/></svg>');
+    background-size: 20px 20px;
+}
+
+/* Melhorias de legibilidade para textos longos */
+p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+/* Efeitos de hover e foco melhorados */
+a:focus, button:focus {
+    outline: 3px solid rgba(79, 70, 229, 0.3);
+    outline-offset: 2px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .news-grid, .theories-grid, .geopolitics-grid, .cities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        padding: 0 1rem;
+    }
+    
+    nav a {
+        padding: 0.8rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .featured-content {
+        padding: 1.5rem;
+    }
+    
+    .featured-content h3 {
+        font-size: 1.3rem;
+    }
+}

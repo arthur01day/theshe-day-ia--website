@@ -1,0 +1,127 @@
+/* Estilos específicos para o jogo RoboDog Run com múltiplas fases */
+
+#robodog-run-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+#robodog-run-game::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4f46e5, #00c2a8, #f43f5e, #4f46e5);
+    background-size: 300% 100%;
+    animation: gradient-shift 3s linear infinite;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+#gameCanvas {
+    border: 3px solid #4f46e5;
+    border-radius: 8px;
+    background: #0f172a;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    max-width: 100%;
+    height: auto;
+}
+
+.game-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 1rem;
+}
+
+.game-info {
+    background: rgba(30, 41, 59, 0.8);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Georgia', serif;
+}
+
+.phase-indicator {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.phase-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 4px;
+    background-color: #334155;
+    transition: all 0.3s ease;
+}
+
+.phase-dot.active {
+    background-color: #00c2a8;
+    box-shadow: 0 0 8px #00c2a8;
+    transform: scale(1.2);
+}
+
+.phase-dot.completed {
+    background-color: #4f46e5;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .phase-indicator {
+        margin-top: 0.75rem;
+    }
+}
+
+/* Animações para transições de fase */
+@keyframes phase-transition {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.phase-transition {
+    animation: phase-transition 0.5s ease-out;
+}
+
+/* Efeitos visuais para os diferentes cenários */
+.phase-1-effect {
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
+}
+
+.phase-2-effect {
+    box-shadow: 0 0 20px rgba(0, 194, 168, 0.4);
+}
+
+.phase-3-effect {
+    box-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboDog Run - 10 Fases Futurísticas | Theshe.Day.IA</title>
+    <link rel="stylesheet" href="robodog-run-10-phases.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000a1a; /* Cor de fundo padrão do jogo */
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            flex-direction: column;
+        }
+        #gameCanvas {
+            border: 2px solid #667eea;
+            background-color: #000;
+            display: block;
+            margin: 20px auto;
+        }
+        .game-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 1000;
+        }
+        .game-overlay h1 {
+            font-size: 3em;
+            color: #667eea;
+            text-shadow: 0 0 15px #667eea;
+            margin-bottom: 20px;
+        }
+        .game-overlay p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .game-overlay button {
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .game-overlay button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        .game-stats-display {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            color: #fff;
+            display: flex;
+            gap: 20px;
+        }
+        .game-stats-display span {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .game-overlay h1 {
+                font-size: 2em;
+            }
+            .game-overlay p {
+                font-size: 1em;
+            }
+            .game-overlay button {
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+            .game-stats-display {
+                top: 10px;
+                right: 10px;
+                font-size: 0.9em;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-overlay" id="game-start-overlay">
+        <h1>RoboDog Run</h1>
+        <p>Jornada através de 10 fases evolutivas da tecnologia</p>
+        <p>Pressione ESPAÇO para pular e iniciar</p>
+        <p>Fase Atual: Subúrbio Digital</p>
+        <button id="start-game-button">Iniciar Jogo</button>
+    </div>
+
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+
+    <div class="game-stats-display">
+        <span id="score-display">Score: 0</span>
+        <span id="phase-display">Fase 1/10</span>
+    </div>
+
+    <script src="robodog-run-10-phases.js"></script>
+</body>
+</html>
+
