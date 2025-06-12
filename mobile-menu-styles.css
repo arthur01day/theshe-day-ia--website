@@ -1,0 +1,87 @@
+/* Estilos para o menu mobile responsivo */
+
+/* Botão de menu hamburger */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    border-radius: 5px;
+    background-color: rgba(37, 99, 235, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para o menu */
+nav.nav-menu {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Estado escondido do menu em mobile */
+nav.nav-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav.nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-color);
+        padding: 70px 20px 20px;
+        z-index: 999;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    nav.nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav.nav-menu ul li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav.nav-menu ul li a {
+        display: block;
+        padding: 12px;
+        width: 100%;
+    }
+    
+    /* Animação do botão hamburger quando o menu está aberto */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+}
